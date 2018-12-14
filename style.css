@@ -3,7 +3,7 @@
 }
 
 #container {
-    /* width: 100vw; */
+    width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
@@ -28,10 +28,10 @@
 }
 
 #leftSide {
-    display: grid;
+    /* display: grid; */
     grid-column: 1;
     grid-row: 1 / span 6;
-    background-color: #424242;
+    background-color: #141414;
     
 }
 
@@ -39,7 +39,7 @@
     display: grid;
     grid-column: 6;
     grid-row: 1 / span 6;
-    background-color:black; 
+    background-color:#141414; 
 
 } 
 

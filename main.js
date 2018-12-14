@@ -2,6 +2,7 @@ const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
+// let foodHolder = [];
 alphaSoup();
 
 
@@ -21,7 +22,11 @@ $('#topicButton').on('click', function () {
 });
 
 function foodRandomizer() {
-    $('#wordLocation').html(food[Math.floor(Math.random() * food.length)]);
+    let foodHolder = (food[Math.floor(Math.random() * food.length)]).split("");
+    // $('#wordLocation').html(foodHolder.split());
+    $('#wordLocation').append('<div>' + foodHolder)
+    // foodHolder = tempFood.split("");
+    console.log(foodHolder);
 }
 
 function gamesRandomizer() {
