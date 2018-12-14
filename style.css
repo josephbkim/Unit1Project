@@ -7,19 +7,24 @@
     height: 100vh;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 30px 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr;
 }
 #navBar {
     display: grid;
     grid-column: 2 / span 4;
     grid-row-start: 1;
     border: 2px solid black;
+    background: #424242;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #navList {
     display: flex;
     justify-content: space-around;
     align-content: flex-start;
+    align-items: center;
 }
 
 #leftSide {
@@ -85,6 +90,6 @@
     grid-column: 4 / span 2;
     grid-row: 4;
     justify-content: space-around;
-    
+
 }
 
