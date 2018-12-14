@@ -35,6 +35,7 @@ function animalsRandomizer() {
 //https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
 function alphaSoup() {
     for (let i = alphabetSoup; i < (alphabetSoup + 26); i++) {
-        $('#letConBox').append('<button>' + String.fromCharCode(i) + '</button>').attr('class', 'clickLetters');
+        $('#letConBox').append('<button>' + String.fromCharCode(i) + '</button>');
+        $('#letConBox button').attr('class', 'clickLetter');
     }
 }

@@ -62,7 +62,13 @@
     grid-column: 4/ span 2;
     grid-row: 2 / span 2;
     justify-content: center;
+    position: relative;
+}
 
+#playerName {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 #chosenWord {
@@ -83,6 +89,7 @@
     display: grid;
     grid-column: 2  / span 2;
     grid-row: 5;
+    text-align: center;
 }
 
 #nameOfNames{
@@ -93,3 +100,27 @@
 
 }
 
+#letConBox {
+    height: 100px;
+    margin: auto auto;
+    justify-content: center;
+}
+
+.clickLetter {
+    width: 34px;
+}
+
+#nextName {
+    display: flex;
+    justify-content: space-around;
+}
+
+#nextRepName {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#nextButton {
+    box-sizing: border-box;
+    width: auto;
+}
