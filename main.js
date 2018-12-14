@@ -8,3 +8,17 @@ $('#playerButton').on('click', function (event) {
     event.preventDefault;
     $('#scoreName').html($('#playerInput').val());
 });
+
+$('#topicButton').on('click', function {
+    if ($('#topicInput').val() == 1) {
+        foodTopic();
+    }
+})
+
+function foodRandomizer() {
+    food[Math.floor(Math.random() * food.length)];
+}
+
+function gamesRandomizer() {
+    games[]
+}
