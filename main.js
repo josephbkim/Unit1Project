@@ -2,6 +2,7 @@ const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
+alphaSoup();
 
 
 $('#playerButton').on('click', function (event) {
@@ -17,7 +18,6 @@ $('#topicButton').on('click', function () {
     } else if ($('#topicInput').val() == 3) {
         animalsRandomizer();
     }
-    alphaSoup();
 });
 
 function foodRandomizer() {
@@ -37,5 +37,11 @@ function alphaSoup() {
     for (let i = alphabetSoup; i < (alphabetSoup + 26); i++) {
         $('#letConBox').append('<button>' + String.fromCharCode(i) + '</button>');
         $('#letConBox button').attr('class', 'clickLetter');
+
     }
 }
+
+$('.clickLetter').on('click', function () {
+    let didit = $(this).html();
+    alert(didit);
+});
