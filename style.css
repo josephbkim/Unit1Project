@@ -1,3 +1,31 @@
-body {
-    color: red;
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 30px 1fr 1fr 1fr 1fr 1fr;
 }
+#navBar {
+    display: grid;
+    grid-column-start: 2 / span 6;
+    grid-row-start: 1;
+}
+
+#navList {
+    display: flex;
+    justify-content: space-around;
+}
+
+#leftSide {
+    display: grid;
+    grid-column-start: 1 / span 1;
+    grid-row-start: 1 / span 6;
+    background-color: #424242;
+}
+
+#rightSide {
+    display: grid;
+    grid-column-start: 7/ span 6;
+    grid-row-start: 1 / span 6;
+    background-color: #424242;
+} 
