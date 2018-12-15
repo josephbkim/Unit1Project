@@ -27,6 +27,7 @@ function foodRandomizer() {
     let wordHolder = (food[Math.floor(Math.random() * food.length)]);
     for (i = 0; i < wordHolder.length; i++) {
         $('#wordLocation').append('<div>' + wordHolder[i]);
+        $('#wordLocation div').attr('class', 'invisibleWord');
         console.log(wordHolder)
     }
 }
@@ -34,6 +35,7 @@ function gamesRandomizer() {
     let wordHolder = (games[Math.floor(Math.random() * games.length)]);
     for (i = 0; i < wordHolder.length; i++) {
         $('#wordLocation').append('<div>' + wordHolder[i]);
+
         console.log(wordHolder)
     }
 }
@@ -44,14 +46,6 @@ function animalsRandomizer() {
         console.log(wordHolder)
     }
 }
-
-// function letterDivCreator() {
-//     for (i = 0; i < wordHolder.length; i++) {
-//         $('#wordLocation').append('<div>' + wordHolder[i]);
-//         console.log(wordHolder)
-//     }
-// }
-
 
 //https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
 function alphaSoup() {

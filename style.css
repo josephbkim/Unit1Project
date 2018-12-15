@@ -116,6 +116,20 @@ li {
     justify-content: center;
 }
 
+#chosenWord div {
+    display: flex;
+    font-size: 20px;
+    justify-content: space-around;   /* border-bottom: 2px solid black; */
+    align-self: start;
+}
+
+.invisibleWord {
+    border-bottom: 2px solid black;
+    color: white;
+}
+
+
+
 #nextGame {
     display: block;
     grid-column: 4 / span 2;
