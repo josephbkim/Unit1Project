@@ -115,16 +115,21 @@
 }
 
 #nextName {
-    display: block;
-    justify-content: space-around;
-}
-
-#nextRepName {
-    box-sizing: border-box;
-    width: 100%;
+    grid-column: 4;
+    grid-row: 6;
 }
 
 #nextButton {
+    grid-column: 5;
+    grid-row: 6;
+}
+
+#nextRepName {
+    display: block;
+    width: 100%;
+}
+
+/* #nextButton {
     box-sizing: border-box;
     width: auto;
-}
+} */
