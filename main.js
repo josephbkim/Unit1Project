@@ -2,6 +2,7 @@ const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
+let wordHolder;
 // let foodHolder = [];
 alphaSoup();
 
@@ -47,6 +48,12 @@ function animalsRandomizer() {
     }
 }
 
+// function letterMatch() {
+//     for (i = 0; i < wordHolder.length; i++) {
+//         if ()
+//     }
+// }
+
 //https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
 function alphaSoup() {
     for (let i = alphabetSoup; i < (alphabetSoup + 26); i++) {
@@ -60,7 +67,6 @@ function wordSplitter() {
         $('#wordLocation').append('<div>' + foodHolder[i] + '</div>')
     }
 }
-
 
 $('.clickLetter').on('click', function () {
     let didit = $(this).html();
