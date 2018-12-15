@@ -21,30 +21,43 @@ $('#topicButton').on('click', function () {
     }
 });
 
-function foodRandomizer() {
-    let foodHolder = (food[Math.floor(Math.random() * food.length)]).split("");
-    // $('#wordLocation').html(foodHolder.split());
-    $('#wordLocation').append('<div>' + foodHolder)
-    // foodHolder = tempFood.split("");
-    console.log(foodHolder);
-}
 
+
+function foodRandomizer() {
+    let foodHolder = (food[Math.floor(Math.random() * food.length)]);
+    for (i = 0; i < foodHolder.length; i++) {
+        $('#wordLocation').append('<div' + foodHolder[i])
+        console.log(foodHolder)
+    }
+}
 function gamesRandomizer() {
     $('#wordLocation').html(games[Math.floor(Math.random() * games.length)]);
 }
-
 function animalsRandomizer() {
     $('#wordLocation').html(animals[Math.floor(Math.random() * animals.length)]);
 }
+
+// function letterDivCreator() {
+//     for (i=0; i<foodHolder.length; i++) {
+//         $('#wordLocation').append('<div' + foodHolder[i] + '</div>')
+//     }
+// }
+
 
 //https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
 function alphaSoup() {
     for (let i = alphabetSoup; i < (alphabetSoup + 26); i++) {
         $('#letConBox').append('<button>' + String.fromCharCode(i) + '</button>');
         $('#letConBox button').attr('class', 'clickLetter');
-
     }
 }
+
+function wordSplitter() {
+    for (i = 0; i < foodHolder.length; i++) {
+        $('#wordLocation').append('<div>' + foodHolder[i] + '</div>')
+    }
+}
+
 
 $('.clickLetter').on('click', function () {
     let didit = $(this).html();
