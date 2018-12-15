@@ -24,22 +24,31 @@ $('#topicButton').on('click', function () {
 
 
 function foodRandomizer() {
-    let foodHolder = (food[Math.floor(Math.random() * food.length)]);
-    for (i = 0; i < foodHolder.length; i++) {
-        $('#wordLocation').append('<div' + foodHolder[i])
-        console.log(foodHolder)
+    let wordHolder = (food[Math.floor(Math.random() * food.length)]);
+    for (i = 0; i < wordHolder.length; i++) {
+        $('#wordLocation').append('<div>' + wordHolder[i]);
+        console.log(wordHolder)
     }
 }
 function gamesRandomizer() {
-    $('#wordLocation').html(games[Math.floor(Math.random() * games.length)]);
+    let wordHolder = (games[Math.floor(Math.random() * games.length)]);
+    for (i = 0; i < wordHolder.length; i++) {
+        $('#wordLocation').append('<div>' + wordHolder[i]);
+        console.log(wordHolder)
+    }
 }
 function animalsRandomizer() {
-    $('#wordLocation').html(animals[Math.floor(Math.random() * animals.length)]);
+    let wordHolder = (animals[Math.floor(Math.random() * animals.length)]);
+    for (i = 0; i < wordHolder.length; i++) {
+        $('#wordLocation').append('<div>' + wordHolder[i]);
+        console.log(wordHolder)
+    }
 }
 
 // function letterDivCreator() {
-//     for (i=0; i<foodHolder.length; i++) {
-//         $('#wordLocation').append('<div' + foodHolder[i] + '</div>')
+//     for (i = 0; i < wordHolder.length; i++) {
+//         $('#wordLocation').append('<div>' + wordHolder[i]);
+//         console.log(wordHolder)
 //     }
 // }
 
