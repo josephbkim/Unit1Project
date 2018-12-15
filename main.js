@@ -2,6 +2,11 @@ const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
+
+let foodHolder = (food[Math.floor(Math.random() * food.length)]);
+let gamesHolder = (games[Math.floor(Math.random() * games.length)]);
+let animalsHolder = (animals[Math.floor(Math.random() * animals.length)]);
+
 let wordHolder;
 // let foodHolder = [];
 alphaSoup();
@@ -25,32 +30,31 @@ $('#topicButton').on('click', function () {
 
 
 function foodRandomizer() {
-    let wordHolder = (food[Math.floor(Math.random() * food.length)]);
-    for (i = 0; i < wordHolder.length; i++) {
-        $('#wordLocation').append('<div>' + wordHolder[i]);
+    for (i = 0; i < foodHolder.length; i++) {
+        $('#wordLocation').append('<div>' + foodHolder[i]);
         $('#wordLocation div').attr('class', 'invisibleWord');
-        console.log(wordHolder)
+        console.log(foodHolder)
     }
 }
 function gamesRandomizer() {
-    let wordHolder = (games[Math.floor(Math.random() * games.length)]);
-    for (i = 0; i < wordHolder.length; i++) {
-        $('#wordLocation').append('<div>' + wordHolder[i]);
-
-        console.log(wordHolder)
+    for (i = 0; i < gamesHolder.length; i++) {
+        $('#wordLocation').append('<div>' + gamesHolder[i]);
+        $('#wordLocation div').attr('class', 'invisibleWord');
+        console.log(gamesHolder)
     }
 }
 function animalsRandomizer() {
-    let wordHolder = (animals[Math.floor(Math.random() * animals.length)]);
-    for (i = 0; i < wordHolder.length; i++) {
-        $('#wordLocation').append('<div>' + wordHolder[i]);
-        console.log(wordHolder)
+    for (i = 0; i < animalsHolder.length; i++) {
+        $('#wordLocation').append('<div>' + animalsHolder[i]);
+        $('#wordLocation div').attr('class', 'invisibleWord');
+        console.log(animalsHolder)
     }
 }
 
 // function letterMatch() {
 //     for (i = 0; i < wordHolder.length; i++) {
-//         if ()
+//         if (wordHolder[i] === letterValue) {
+//             $('.invisibleWord').eq(i).css('color', 'black')
 //     }
 // }
 
@@ -69,6 +73,12 @@ function wordSplitter() {
 }
 
 $('.clickLetter').on('click', function () {
-    let didit = $(this).html();
-    alert(didit);
+    let letterValue = $(this).html();
+    alert(letterValue);
+    for (let j = 0; j < foodHolder.length; j++) {
+        if (foodHolder[j].toUpperCase() === letterValue) {
+            console.log(foodHolder[j].toUpperCase())
+        }
+
+    }
 });
