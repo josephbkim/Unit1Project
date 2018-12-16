@@ -121,11 +121,11 @@ li {
     font-size: 20px;
     justify-content: space-around;   /* border-bottom: 2px solid black; */
     align-self: start;
+    color: white;
 }
 
 .invisibleWord {
     border-bottom: 2px solid black;
-    color: white;
 }
 
 
@@ -182,7 +182,6 @@ li {
     width: 100%;
 }
 
-/* #nextButton {
-    box-sizing: border-box;
-    width: auto;
-} */
+.black {
+    color: black;
+}
