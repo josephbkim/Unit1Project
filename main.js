@@ -3,6 +3,10 @@ const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
 
+let missCounter = 0;
+let playerScore = 0;
+let cpuScore = 0;
+
 let foodHolder = (food[Math.floor(Math.random() * food.length)]);
 let gamesHolder = (games[Math.floor(Math.random() * games.length)]);
 let animalsHolder = (animals[Math.floor(Math.random() * animals.length)]);
@@ -74,11 +78,12 @@ function wordSplitter() {
 
 $('.clickLetter').on('click', function () {
     let letterValue = $(this).html();
-    alert(letterValue);
+    $(this).remove();
+    console.log(letterValue);
     for (let j = 0; j < foodHolder.length; j++) {
         if (foodHolder[j].toUpperCase() === letterValue) {
-            alert("ok");
-            $('chosenWord div:eq(j)').css('background-color', 'red');
+            console.log("ok");
+            $(".invisibleWord:eq(j)").css({ 'background-color': 'red' });
         }
         // } else if (foodHolder[j].toUpperCase() !== letterValue) {
         //     alert("Try again");
