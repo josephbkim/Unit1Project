@@ -4,6 +4,7 @@ const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
 
 let missCounter = 0;
+let letterCounter = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
@@ -82,11 +83,18 @@ $('.clickLetter').on('click', function () {
     console.log(letterValue);
     for (let j = 0; j < foodHolder.length; j++) {
         if (foodHolder[j].toUpperCase() === letterValue) {
-            console.log("ok");
             $("#wordLocation div").eq(j).css({ 'color': 'red' });
+            letterCounter++
+
         }
-        // } else if (foodHolder[j].toUpperCase() !== letterValue) {
-        //     alert("Try again");
-        // }
     }
+    winChecker();
 });
+
+function winChecker() {
+    if (letterCounter === foodHolder.length) {
+        alert('You win!!');
+    } else {
+        alert('Go Again');
+    }
+}
