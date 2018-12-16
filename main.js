@@ -83,7 +83,7 @@ $('.clickLetter').on('click', function () {
     for (let j = 0; j < foodHolder.length; j++) {
         if (foodHolder[j].toUpperCase() === letterValue) {
             console.log("ok");
-            $(".invisibleWord:eq(j)").css({ 'background-color': 'red' });
+            $("#wordLocation div").eq(j).css({ 'color': 'red' });
         }
         // } else if (foodHolder[j].toUpperCase() !== letterValue) {
         //     alert("Try again");
