@@ -186,11 +186,14 @@ li {
     justify-content: space-around;   /* border-bottom: 2px solid black; */
     align-self: start;
     color: white;
+    text-decoration: underline;
+    text-decoration-color: black;
+    
 }
 
-.invisibleWord {
+/* .invisibleWord {
     border-bottom: 2px solid black;
-}
+} */
 
 
 

@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Hangman</title>
     <!-- //Learning about AJAX -->
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -70,13 +73,13 @@
             <div nextGameContainer>
                 <h1 id="nextGameHeader">Next Game</h1>
                 <div id="nextRepName">
-                    <div id="replay">Replay</div>
+                    <div id="replay">Play Again</div>
                     <input type="button" value="Submit" id="replayButton">
                 </div>
-                <div id="nextButton">
+                <!-- <div id="nextButton">
                     <div id="newTopic">New Topic</div>
                     <input type="button" value="Submit" id="newTopicButton">
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="allBox" id="leftSide"></div>

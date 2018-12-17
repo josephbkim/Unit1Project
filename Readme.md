@@ -9,6 +9,14 @@ Page loads and allows player to enter name.  Player chooses Topic/Opponent.  Onc
 Technologies and Resources Used
 https://stackoverflow.com/questions/4547609/how-do-you-get-a-string-to-a-character-array-in-javascript
 
+https://sweetalert2.github.io/#download
+
+//https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
+// 
+
+https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
+
+https://jquery.com/download/
 
 
 Wireframes

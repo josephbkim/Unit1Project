@@ -3,7 +3,6 @@ const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 
-const alphabetSoup = 'A'.charCodeAt(0);
 let picCounter = 0;
 let missCounter = 0;
 let letterCounter = 0;
@@ -11,14 +10,9 @@ let missedLetterCounter = 0;
 let totalMisses = 0;
 let playerScore = 0;
 let cpuScore = 0;
-
-// let foodHolder = (food[Math.floor(Math.random() * food.length)]);
-let gamesHolder = (games[Math.floor(Math.random() * games.length)]);
-let animalsHolder = (animals[Math.floor(Math.random() * animals.length)]);
-
+let alphabetSoup = 'A'.charCodeAt(0);
 let wordHolder;
-// let foodHolder = [];
-alphaSoup();
+// alphaSoup();
 
 
 $('#playerButton').on('click', function (event) {
@@ -27,14 +21,18 @@ $('#playerButton').on('click', function (event) {
 });
 
 $('#topicButton').on('click', function () {
+
+
     if ($('#topicInput').val() == 1) {
+        alphaSoup();
+        clickLetter();
         wordHolder = (food[Math.floor(Math.random() * food.length)]);
         wordRandomizer();
     } else if ($('#topicInput').val() == 2) {
-        wordHolder = gamesHolder
+        wordHolder = (games[Math.floor(Math.random() * games.length)]);
         wordRandomizer();
     } else if ($('#topicInput').val() == 3) {
-        wordHolder = animalsHolder;
+        wordHolder = (animals[Math.floor(Math.random() * animals.length)]);
         wordRandomizer();
     }
 });
@@ -55,36 +53,32 @@ function alphaSoup() {
     }
 }
 
-// function wordSplitter() {
-//     for (i = 0; i < foodHolder.length; i++) {
-//         $('#wordLocation').append('<div>' + foodHolder[i] + '</div>')
-//     }
-// }
-
 // https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
-$('.clickLetter').on('click', function () {
-    let letterValue = $(this).html();
-    $(this).remove();
-    console.log(letterValue);
-    for (let k = 0; k < wordHolder.length; k++) {
-        if (wordHolder[k].toUpperCase() !== letterValue) {
-            missCounter++;
-            console.log('misses' + missCounter);
+function clickLetter() {
+    $('.clickLetter').on('click', function () {
+        let letterValue = $(this).html();
+        $(this).remove();
+        console.log(letterValue);
+        for (let k = 0; k < wordHolder.length; k++) {
+            if (wordHolder[k].toUpperCase() !== letterValue) {
+                missCounter++;
+                console.log('misses' + missCounter);
 
+            }
+            missFinder();
         }
-        missFinder();
-    }
-    for (let j = 0; j < wordHolder.length; j++) {
-        if (wordHolder[j].toUpperCase() === letterValue) {
-            $("#wordLocation div").eq(j).css({ 'color': 'red' });
-            letterCounter++;
-            console.log(letterCounter);
-            missCounter = 0;
+        for (let j = 0; j < wordHolder.length; j++) {
+            if (wordHolder[j].toUpperCase() === letterValue) {
+                $("#wordLocation div").eq(j).css({ 'color': 'red' });
+                letterCounter++;
+                console.log(letterCounter);
+                missCounter = 0;
+            }
         }
-    }
-    winChecker();
-    loseChecker();
-});
+        winChecker();
+        loseChecker();
+    });
+}
 
 function winChecker() {
     if (letterCounter === wordHolder.length) {
@@ -112,11 +106,10 @@ function missFinder() {
 }
 
 $('#replayButton').on('click', function () {
+    resetCounters();
     wordBoxReset();
     $('#hangImg').attr('src', "https://i.imgur.com/7KWkeDM.png?2");
     letterBoxReset();
-    resetCounters();
-    alphaSoup();
 })
 
 function picLoader() {
@@ -132,14 +125,13 @@ function resetCounters() {
     let totalMisses = 0;
     let playerScore = 0;
     let cpuScore = 0;
+    let alphabetSoup = 'A'.charCodeAt(0);
 }
 
 function wordBoxReset() {
     $('#wordLocation').load('index2.html #wordLocation')
 }
-// function imgBoxReset() {
-//     $('img #hangImg').load('index2.html img #hangImg');
-// }
+
 function letterBoxReset() {
-    $('#letConBox').load('index2.html #letConBox');
+    $('#letConBox').empty();
 }
