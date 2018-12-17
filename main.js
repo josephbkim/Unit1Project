@@ -2,6 +2,8 @@ const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
+//https://stackoverflow.com/questions/5557641/how-can-i-reset-div-to-its-original-state-after-it-has-been-modified-by-java
+const emptyWordBox = $('#wordLocation').clone();
 
 let missCounter = 0;
 let letterCounter = 0;
@@ -24,7 +26,7 @@ $('#playerButton').on('click', function (event) {
 });
 
 $('#topicButton').on('click', function () {
-    $('wordLocation').remove();
+    // $('wordLocation').remove();
     if ($('#topicInput').val() == 1) {
         foodRandomizer();
     } else if ($('#topicInput').val() == 2) {
@@ -85,7 +87,7 @@ $('.clickLetter').on('click', function () {
     for (let k = 0; k < foodHolder.length; k++) {
         if (foodHolder[k].toUpperCase() !== letterValue) {
             missCounter++;
-            console.log(missCounter);
+            console.log('misses' + missCounter);
 
         }
         missFinder();
@@ -95,6 +97,7 @@ $('.clickLetter').on('click', function () {
             $("#wordLocation div").eq(j).css({ 'color': 'red' });
             letterCounter++;
             console.log(letterCounter);
+            missCounter = 0;
         }
     }
     winChecker();
@@ -125,3 +128,7 @@ function missFinder() {
     }
 }
 
+//https://stackoverflow.com/questions/6666363/is-it-possible-to-clear-a-form-and-reset-reload-the-page-with-one-button
+$('replayButton').on('click', function () {
+    $('#wordLocation').replace(emptyWordBox)
+})

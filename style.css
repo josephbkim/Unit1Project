@@ -12,7 +12,6 @@
 }
 
 h1 {
-    font-size: 40px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -112,7 +111,11 @@ h1 {
     font-size: 100px;
 }
 
-.scoreName {
+#scoreName {
+    font-size: 20px;
+    font-weight: bold;
+}
+#compName {
     font-size: 20px;
     font-weight: bold;
 }
