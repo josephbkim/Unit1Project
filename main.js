@@ -24,6 +24,7 @@ $('#playerButton').on('click', function (event) {
 });
 
 $('#topicButton').on('click', function () {
+    $('wordLocation').remove();
     if ($('#topicInput').val() == 1) {
         foodRandomizer();
     } else if ($('#topicInput').val() == 2) {
@@ -81,15 +82,14 @@ $('.clickLetter').on('click', function () {
     let letterValue = $(this).html();
     $(this).remove();
     console.log(letterValue);
-
     for (let k = 0; k < foodHolder.length; k++) {
         if (foodHolder[k].toUpperCase() !== letterValue) {
             missCounter++;
             console.log(missCounter);
+
         }
         missFinder();
     }
-
     for (let j = 0; j < foodHolder.length; j++) {
         if (foodHolder[j].toUpperCase() === letterValue) {
             $("#wordLocation div").eq(j).css({ 'color': 'red' });
