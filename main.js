@@ -13,7 +13,6 @@ let foodHolder = (food[Math.floor(Math.random() * food.length)]);
 let gamesHolder = (games[Math.floor(Math.random() * games.length)]);
 let animalsHolder = (animals[Math.floor(Math.random() * animals.length)]);
 
-
 // let foodHolder = [];
 alphaSoup();
 
@@ -84,12 +83,11 @@ $('.clickLetter').on('click', function () {
         if (foodHolder[j].toUpperCase() === letterValue) {
             $("#wordLocation div").eq(j).css({ 'color': 'red' });
             letterCounter++
-        } else {
-            missedLetterCounter++
-            if (missedLetterCounter === foodHolder.length) {
-                missCounter++
-                console.log(missCounter);
-            }
+            console.log(letterCounter);
+            // if (letterCounter === 0) {
+            //     missCounter++;
+            //     console.log(missCounter);
+            // }
         }
         loseChecker();
     }
@@ -100,6 +98,7 @@ function winChecker() {
     if (letterCounter === foodHolder.length) {
         alert('You win!!');
         playerScore++;
+        $('#playerScore').html(playerScore);
     } else {
         alert('Go Again');
     }
@@ -111,3 +110,4 @@ function loseChecker() {
         cpuScore++
     }
 }
+
