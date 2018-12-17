@@ -90,13 +90,13 @@ $('.clickLetter').on('click', function () {
         missFinder();
     }
 
-    // for (let j = 0; j < foodHolder.length; j++) {
-    //     if (foodHolder[j].toUpperCase() === letterValue) {
-    //         $("#wordLocation div").eq(j).css({ 'color': 'red' });
-    //         letterCounter++;
-    //         console.log(letterCounter);
-    //     }
-    // }
+    for (let j = 0; j < foodHolder.length; j++) {
+        if (foodHolder[j].toUpperCase() === letterValue) {
+            $("#wordLocation div").eq(j).css({ 'color': 'red' });
+            letterCounter++;
+            console.log(letterCounter);
+        }
+    }
     winChecker();
     loseChecker();
 });
@@ -113,6 +113,7 @@ function loseChecker() {
     if (totalMisses === 6) {
         alert("You Lose!!");
         cpuScore++;
+        $('#compScore').html(cpuScore);
     }
 }
 
@@ -121,10 +122,6 @@ function missFinder() {
         totalMisses++;
         alert("wrong!");
         missCounter = 0;
-        // if (totalMisses === 6) {
-        //     alert("You Lose!!");
-        //     cpuScore++;
-        // }
     }
 }
 
