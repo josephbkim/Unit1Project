@@ -1,9 +1,11 @@
 const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
+
 const alphabetSoup = 'A'.charCodeAt(0);
 //https://stackoverflow.com/questions/5557641/how-can-i-reset-div-to-its-original-state-after-it-has-been-modified-by-java
-const emptyWordBox = $('#wordLocation').clone();
+// const emptyWordBox = $('#wordLocation').clone();
+// console.log(emptyWordBox);
 const picArray = ["https://i.imgur.com/hcxMzEb.png?1", "https://i.imgur.com/0u8yPXP.png?1", "https://i.imgur.com/rkDnlVb.png?1", "https://i.imgur.com/d8JYvo7.png?1", "https://i.imgur.com/6Y49UI1.png?1", "https://i.imgur.com/DlTpcl3.png?1"];
 
 let picCounter = 0;
@@ -18,6 +20,7 @@ let foodHolder = (food[Math.floor(Math.random() * food.length)]);
 let gamesHolder = (games[Math.floor(Math.random() * games.length)]);
 let animalsHolder = (animals[Math.floor(Math.random() * animals.length)]);
 
+let wordHolder;
 // let foodHolder = [];
 alphaSoup();
 
@@ -28,37 +31,39 @@ $('#playerButton').on('click', function (event) {
 });
 
 $('#topicButton').on('click', function () {
-    // $('wordLocation').remove();
     if ($('#topicInput').val() == 1) {
-        foodRandomizer();
+        wordHolder = foodHolder;
+        wordRandomizer();
     } else if ($('#topicInput').val() == 2) {
-        gamesRandomizer();
+        wordHolder = gamesHolder
+        wordRandomizer();
     } else if ($('#topicInput').val() == 3) {
-        animalsRandomizer();
+        wordHolder = animalsHolder;
+        wordRandomizer();
     }
 });
 
-function foodRandomizer() {
-    for (i = 0; i < foodHolder.length; i++) {
-        $('#wordLocation').append('<div>' + foodHolder[i]);
+function wordRandomizer() {
+    for (i = 0; i < wordHolder.length; i++) {
+        $('#wordLocation').append('<div>' + wordHolder[i]);
         $('#wordLocation div').attr('class', 'invisibleWord');
-        console.log(foodHolder)
+        console.log(wordHolder)
     }
 }
-function gamesRandomizer() {
-    for (i = 0; i < gamesHolder.length; i++) {
-        $('#wordLocation').append('<div>' + gamesHolder[i]);
-        $('#wordLocation div').attr('class', 'invisibleWord');
-        console.log(gamesHolder)
-    }
-}
-function animalsRandomizer() {
-    for (i = 0; i < animalsHolder.length; i++) {
-        $('#wordLocation').append('<div>' + animalsHolder[i]);
-        $('#wordLocation div').attr('class', 'invisibleWord');
-        console.log(animalsHolder)
-    }
-}
+// function gamesRandomizer() {
+//     for (i = 0; i < gamesHolder.length; i++) {
+//         $('#wordLocation').append('<div>' + gamesHolder[i]);
+//         $('#wordLocation div').attr('class', 'invisibleWord');
+//         console.log(gamesHolder)
+//     }
+// }
+// function animalsRandomizer() {
+//     for (i = 0; i < animalsHolder.length; i++) {
+//         $('#wordLocation').append('<div>' + animalsHolder[i]);
+//         $('#wordLocation div').attr('class', 'invisibleWord');
+//         console.log(animalsHolder)
+//     }
+// }
 
 // function letterMatch() {
 //     for (i = 0; i < wordHolder.length; i++) {
@@ -86,16 +91,16 @@ $('.clickLetter').on('click', function () {
     let letterValue = $(this).html();
     $(this).remove();
     console.log(letterValue);
-    for (let k = 0; k < foodHolder.length; k++) {
-        if (foodHolder[k].toUpperCase() !== letterValue) {
+    for (let k = 0; k < wordHolder.length; k++) {
+        if (wordHolder[k].toUpperCase() !== letterValue) {
             missCounter++;
             console.log('misses' + missCounter);
 
         }
         missFinder();
     }
-    for (let j = 0; j < foodHolder.length; j++) {
-        if (foodHolder[j].toUpperCase() === letterValue) {
+    for (let j = 0; j < wordHolder.length; j++) {
+        if (wordHolder[j].toUpperCase() === letterValue) {
             $("#wordLocation div").eq(j).css({ 'color': 'red' });
             letterCounter++;
             console.log(letterCounter);
@@ -107,7 +112,7 @@ $('.clickLetter').on('click', function () {
 });
 
 function winChecker() {
-    if (letterCounter === foodHolder.length) {
+    if (letterCounter === wordHolder.length) {
         alert('You win!!');
         playerScore++;
         $('#playerScore').html(playerScore);
@@ -123,7 +128,7 @@ function loseChecker() {
 }
 
 function missFinder() {
-    if (missCounter === foodHolder.length) {
+    if (missCounter === wordHolder.length) {
         totalMisses++;
         alert("wrong!");
         picLoader();
@@ -140,3 +145,4 @@ function picLoader() {
     $('#hangImg').attr('src', picArray[picCounter]);
     picCounter++;
 }
+
