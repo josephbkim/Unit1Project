@@ -126,6 +126,7 @@ function missFinder() {
     if (missCounter === foodHolder.length) {
         totalMisses++;
         alert("wrong!");
+        picLoader();
         missCounter = 0;
     }
 }
