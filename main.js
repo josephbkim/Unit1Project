@@ -46,27 +46,6 @@ function wordRandomizer() {
         console.log(wordHolder)
     }
 }
-// function gamesRandomizer() {
-//     for (i = 0; i < gamesHolder.length; i++) {
-//         $('#wordLocation').append('<div>' + gamesHolder[i]);
-//         $('#wordLocation div').attr('class', 'invisibleWord');
-//         console.log(gamesHolder)
-//     }
-// }
-// function animalsRandomizer() {
-//     for (i = 0; i < animalsHolder.length; i++) {
-//         $('#wordLocation').append('<div>' + animalsHolder[i]);
-//         $('#wordLocation div').attr('class', 'invisibleWord');
-//         console.log(animalsHolder)
-//     }
-// }
-
-// function letterMatch() {
-//     for (i = 0; i < wordHolder.length; i++) {
-//         if (wordHolder[i] === letterValue) {
-//             $('.invisibleWord').eq(i).css('color', 'black')
-//     }
-// }
 
 //https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
 function alphaSoup() {
@@ -133,9 +112,11 @@ function missFinder() {
 }
 
 $('#replayButton').on('click', function () {
-    $('#wordLocation').load('index2.html #wordLocation', function () {
-
-    })
+    wordBoxReset();
+    $('#hangImg').attr('src', "https://i.imgur.com/7KWkeDM.png?2");
+    letterBoxReset();
+    resetCounters();
+    alphaSoup();
 })
 
 function picLoader() {
@@ -144,7 +125,6 @@ function picLoader() {
 }
 
 function resetCounters() {
-    const alphabetSoup = 'A'.charCodeAt(0);
     let picCounter = 0;
     let missCounter = 0;
     let letterCounter = 0;
@@ -154,4 +134,12 @@ function resetCounters() {
     let cpuScore = 0;
 }
 
-function 
+function wordBoxReset() {
+    $('#wordLocation').load('index2.html #wordLocation')
+}
+// function imgBoxReset() {
+//     $('img #hangImg').load('index2.html img #hangImg');
+// }
+function letterBoxReset() {
+    $('#letConBox').load('index2.html #letConBox');
+}
