@@ -1,13 +1,9 @@
+const picArray = ["https://i.imgur.com/hcxMzEb.png?1", "https://i.imgur.com/0u8yPXP.png?1", "https://i.imgur.com/rkDnlVb.png?1", "https://i.imgur.com/d8JYvo7.png?1", "https://i.imgur.com/6Y49UI1.png?1", "https://i.imgur.com/DlTpcl3.png?1"];
 const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 
 const alphabetSoup = 'A'.charCodeAt(0);
-//https://stackoverflow.com/questions/5557641/how-can-i-reset-div-to-its-original-state-after-it-has-been-modified-by-java
-// const emptyWordBox = $('#wordLocation').clone();
-// console.log(emptyWordBox);
-const picArray = ["https://i.imgur.com/hcxMzEb.png?1", "https://i.imgur.com/0u8yPXP.png?1", "https://i.imgur.com/rkDnlVb.png?1", "https://i.imgur.com/d8JYvo7.png?1", "https://i.imgur.com/6Y49UI1.png?1", "https://i.imgur.com/DlTpcl3.png?1"];
-
 let picCounter = 0;
 let missCounter = 0;
 let letterCounter = 0;
@@ -16,7 +12,7 @@ let totalMisses = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
-let foodHolder = (food[Math.floor(Math.random() * food.length)]);
+// let foodHolder = (food[Math.floor(Math.random() * food.length)]);
 let gamesHolder = (games[Math.floor(Math.random() * games.length)]);
 let animalsHolder = (animals[Math.floor(Math.random() * animals.length)]);
 
@@ -32,7 +28,7 @@ $('#playerButton').on('click', function (event) {
 
 $('#topicButton').on('click', function () {
     if ($('#topicInput').val() == 1) {
-        wordHolder = foodHolder;
+        wordHolder = (food[Math.floor(Math.random() * food.length)]);
         wordRandomizer();
     } else if ($('#topicInput').val() == 2) {
         wordHolder = gamesHolder
@@ -136,13 +132,26 @@ function missFinder() {
     }
 }
 
-// //https://stackoverflow.com/questions/6666363/is-it-possible-to-clear-a-form-and-reset-reload-the-page-with-one-button
-// $('replayButton').on('click', function () {
-//     $('#wordLocation').replace(emptyWordBox)
-// })
+$('#replayButton').on('click', function () {
+    $('#wordLocation').load('index2.html #wordLocation', function () {
+
+    })
+})
 
 function picLoader() {
     $('#hangImg').attr('src', picArray[picCounter]);
     picCounter++;
 }
 
+function resetCounters() {
+    const alphabetSoup = 'A'.charCodeAt(0);
+    let picCounter = 0;
+    let missCounter = 0;
+    let letterCounter = 0;
+    let missedLetterCounter = 0;
+    let totalMisses = 0;
+    let playerScore = 0;
+    let cpuScore = 0;
+}
+
+function 
