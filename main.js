@@ -4,7 +4,9 @@ const animals = ['dog', 'cat', 'lion'];
 const alphabetSoup = 'A'.charCodeAt(0);
 //https://stackoverflow.com/questions/5557641/how-can-i-reset-div-to-its-original-state-after-it-has-been-modified-by-java
 const emptyWordBox = $('#wordLocation').clone();
+const picArray = ["https://i.imgur.com/hcxMzEb.png?1", "https://i.imgur.com/0u8yPXP.png?1", "https://i.imgur.com/rkDnlVb.png?1", "https://i.imgur.com/d8JYvo7.png?1", "https://i.imgur.com/6Y49UI1.png?1", "https://i.imgur.com/DlTpcl3.png?1"];
 
+let picCounter = 0;
 let missCounter = 0;
 let letterCounter = 0;
 let missedLetterCounter = 0;
@@ -128,7 +130,12 @@ function missFinder() {
     }
 }
 
-//https://stackoverflow.com/questions/6666363/is-it-possible-to-clear-a-form-and-reset-reload-the-page-with-one-button
-$('replayButton').on('click', function () {
-    $('#wordLocation').replace(emptyWordBox)
-})
+// //https://stackoverflow.com/questions/6666363/is-it-possible-to-clear-a-form-and-reset-reload-the-page-with-one-button
+// $('replayButton').on('click', function () {
+//     $('#wordLocation').replace(emptyWordBox)
+// })
+
+function picLoader() {
+    $('#hangImg').attr('src', picArray[picCounter]);
+    picCounter++;
+}
