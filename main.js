@@ -5,6 +5,7 @@ const alphabetSoup = 'A'.charCodeAt(0);
 
 let missCounter = 0;
 let letterCounter = 0;
+let missedLetterCounter = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
@@ -12,7 +13,7 @@ let foodHolder = (food[Math.floor(Math.random() * food.length)]);
 let gamesHolder = (games[Math.floor(Math.random() * games.length)]);
 let animalsHolder = (animals[Math.floor(Math.random() * animals.length)]);
 
-let wordHolder;
+
 // let foodHolder = [];
 alphaSoup();
 
@@ -31,8 +32,6 @@ $('#topicButton').on('click', function () {
         animalsRandomizer();
     }
 });
-
-
 
 function foodRandomizer() {
     for (i = 0; i < foodHolder.length; i++) {
@@ -85,8 +84,14 @@ $('.clickLetter').on('click', function () {
         if (foodHolder[j].toUpperCase() === letterValue) {
             $("#wordLocation div").eq(j).css({ 'color': 'red' });
             letterCounter++
-
+        } else {
+            missedLetterCounter++
+            if (missedLetterCounter === foodHolder.length) {
+                missCounter++
+                console.log(missCounter);
+            }
         }
+        loseChecker();
     }
     winChecker();
 });
@@ -94,7 +99,15 @@ $('.clickLetter').on('click', function () {
 function winChecker() {
     if (letterCounter === foodHolder.length) {
         alert('You win!!');
+        playerScore++;
     } else {
         alert('Go Again');
+    }
+}
+
+function loseChecker() {
+    if (missCounter === 6) {
+        alert("you lose buddy");
+        cpuScore++
     }
 }
