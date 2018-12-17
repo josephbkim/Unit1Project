@@ -6,6 +6,7 @@ const alphabetSoup = 'A'.charCodeAt(0);
 let missCounter = 0;
 let letterCounter = 0;
 let missedLetterCounter = 0;
+let totalMisses = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
@@ -69,29 +70,35 @@ function alphaSoup() {
     }
 }
 
-function wordSplitter() {
-    for (i = 0; i < foodHolder.length; i++) {
-        $('#wordLocation').append('<div>' + foodHolder[i] + '</div>')
-    }
-}
+// function wordSplitter() {
+//     for (i = 0; i < foodHolder.length; i++) {
+//         $('#wordLocation').append('<div>' + foodHolder[i] + '</div>')
+//     }
+// }
 
+// https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
 $('.clickLetter').on('click', function () {
     let letterValue = $(this).html();
     $(this).remove();
     console.log(letterValue);
-    for (let j = 0; j < foodHolder.length; j++) {
-        if (foodHolder[j].toUpperCase() === letterValue) {
-            $("#wordLocation div").eq(j).css({ 'color': 'red' });
-            letterCounter++
-            console.log(letterCounter);
-            // if (letterCounter === 0) {
-            //     missCounter++;
-            //     console.log(missCounter);
-            // }
+
+    for (let k = 0; k < foodHolder.length; k++) {
+        if (foodHolder[k].toUpperCase() !== letterValue) {
+            missCounter++;
+            console.log(missCounter);
         }
-        loseChecker();
+        missFinder();
     }
+
+    // for (let j = 0; j < foodHolder.length; j++) {
+    //     if (foodHolder[j].toUpperCase() === letterValue) {
+    //         $("#wordLocation div").eq(j).css({ 'color': 'red' });
+    //         letterCounter++;
+    //         console.log(letterCounter);
+    //     }
+    // }
     winChecker();
+    loseChecker();
 });
 
 function winChecker() {
@@ -99,15 +106,25 @@ function winChecker() {
         alert('You win!!');
         playerScore++;
         $('#playerScore').html(playerScore);
-    } else {
-        alert('Go Again');
     }
 }
 
 function loseChecker() {
-    if (missCounter === 6) {
-        alert("you lose buddy");
-        cpuScore++
+    if (totalMisses === 6) {
+        alert("You Lose!!");
+        cpuScore++;
+    }
+}
+
+function missFinder() {
+    if (missCounter === foodHolder.length) {
+        totalMisses++;
+        alert("wrong!");
+        missCounter = 0;
+        // if (totalMisses === 6) {
+        //     alert("You Lose!!");
+        //     cpuScore++;
+        // }
     }
 }
 
