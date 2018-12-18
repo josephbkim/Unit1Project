@@ -132,7 +132,9 @@ function resetCounters() {
 function wordBoxReset() {
     $('#wordLocation').load('index2.html #wordLocation')
 }
-
 function letterBoxReset() {
     $('#letterBox').load('index2.html #letterBox')
+}
+function playerInfoReset() {
+    $('#playerInfo').load('index2.html #letterBox')
 }
