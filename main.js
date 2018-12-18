@@ -109,9 +109,10 @@ function missFinder() {
 
 $('#replayButton').on('click', function () {
     resetCounters();
-    wordBoxReset();
+    // wordBoxReset();
     $('#hangImg').attr('src', "https://i.imgur.com/pCD9I6s.png");
-    letterBoxReset();
+    // letterBoxReset();
+    pageReset()
 })
 
 function picLoader() {
@@ -129,12 +130,16 @@ function resetCounters() {
     alphabetSoup = 'A'.charCodeAt(0);
 }
 
-function wordBoxReset() {
-    $('#wordLocation').load('index2.html #wordLocation')
-}
-function letterBoxReset() {
-    $('#letterBox').load('index2.html #letterBox')
-}
-function playerInfoReset() {
-    $('#playerInfo').load('index2.html #letterBox')
+// function wordBoxReset() {
+//     $('#wordLocation').load('index2.html #wordLocation')
+// }
+// function letterBoxReset() {
+//     $('#letterBox').load('index2.html #letterBox')
+// }
+// function playerInfoReset() {
+//     $('#playerInfo').load('index2.html #letterBox')
+// }
+
+function pageReset() {
+    $('body').load('index2.html #letterBox')
 }
