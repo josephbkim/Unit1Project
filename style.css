@@ -55,16 +55,23 @@ h1 {
     grid-column: 1;
     grid-row: 1 / span 6;
     background-color: #141414;
-    
+    align-content: center;  
 }
-
 #rightSide {
     display: grid;
     grid-column: 6;
     grid-row: 1 / span 6;
-    background-color:#141414; 
-
+    background-color:#141414;
+    align-content: center;
 } 
+
+#sideBanner {
+    text-align: center;
+    font-size: 50px;
+    color: red;
+
+}
+
 
 #imgBox {
     display: grid;
@@ -202,6 +209,7 @@ li {
     display: grid;
     grid-column: 4 / span 2;
     grid-row: 6;
+    font-size: 20px;
 }
 #nextGameContainer {
     display: grid;

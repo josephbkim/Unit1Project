@@ -110,7 +110,7 @@ function missFinder() {
 $('#replayButton').on('click', function () {
     resetCounters();
     wordBoxReset();
-    $('#hangImg').attr('src', "https://i.imgur.com/7KWkeDM.png?2");
+    $('#hangImg').attr('src', "https://i.imgur.com/pCD9I6s.png");
     letterBoxReset();
 })
 

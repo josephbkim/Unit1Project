@@ -9,7 +9,9 @@
     <title>Hangman</title>
     <!-- //Learning about AJAX -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script defer src=main.js></script>
@@ -79,8 +81,13 @@
                 </div> -->
             </div>
         </div>
-        <div class="allBox" id="leftSide"></div>
-        <div class="allBox" id="rightSide"></div>
+        <div class="allBox" id="leftSide">
+            <div id="sideBanner">Hangman</div>
+        </div>
+        <div class="allBox" id="rightSide">
+            <div id="sideBanner">Hangman</div>
+        </div>
+    </div>
     </div>
 </body>
 
