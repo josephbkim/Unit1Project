@@ -1,4 +1,4 @@
-const picArray = ["https://i.imgur.com/hcxMzEb.png?1", "https://i.imgur.com/0u8yPXP.png?1", "https://i.imgur.com/rkDnlVb.png?1", "https://i.imgur.com/d8JYvo7.png?1", "https://i.imgur.com/6Y49UI1.png?1", "https://i.imgur.com/DlTpcl3.png?1"];
+const picArray = ["https://i.imgur.com/eVTqHsH.png", "https://i.imgur.com/PkMwrPa.png", "https://i.imgur.com/ZtKq1bU.png", "https://i.imgur.com/7gRbpfS.png", "https://i.imgur.com/pO8qUUD.png", "https://i.imgur.com/3gp0WIi.png"];
 const food = ['pizza', 'tacos', 'hamburger'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
@@ -10,7 +10,6 @@ let missedLetterCounter = 0;
 let totalMisses = 0;
 let playerScore = 0;
 let cpuScore = 0;
-let alphabetSoup = 'A'.charCodeAt(0);
 let wordHolder;
 // alphaSoup();
 
@@ -24,16 +23,20 @@ $('#topicButton').on('click', function () {
 
 
     if ($('#topicInput').val() == 1) {
-        alphaSoup();
-        clickLetter();
         wordHolder = (food[Math.floor(Math.random() * food.length)]);
         wordRandomizer();
+        alphaSoup();
+        clickLetter();
     } else if ($('#topicInput').val() == 2) {
         wordHolder = (games[Math.floor(Math.random() * games.length)]);
         wordRandomizer();
+        alphaSoup();
+        clickLetter();
     } else if ($('#topicInput').val() == 3) {
         wordHolder = (animals[Math.floor(Math.random() * animals.length)]);
         wordRandomizer();
+        alphaSoup();
+        clickLetter();
     }
 });
 
@@ -41,12 +44,12 @@ function wordRandomizer() {
     for (i = 0; i < wordHolder.length; i++) {
         $('#wordLocation').append('<div>' + wordHolder[i]);
         $('#wordLocation div').attr('class', 'invisibleWord');
-        console.log(wordHolder)
     }
 }
 
 //https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
 function alphaSoup() {
+    let alphabetSoup = 'A'.charCodeAt(0);
     for (let i = alphabetSoup; i < (alphabetSoup + 26); i++) {
         $('#letConBox').append('<button>' + String.fromCharCode(i) + '</button>');
         $('#letConBox button').attr('class', 'clickLetter');
@@ -58,7 +61,6 @@ function clickLetter() {
     $('.clickLetter').on('click', function () {
         let letterValue = $(this).html();
         $(this).remove();
-        console.log(letterValue);
         for (let k = 0; k < wordHolder.length; k++) {
             if (wordHolder[k].toUpperCase() !== letterValue) {
                 missCounter++;
@@ -71,7 +73,6 @@ function clickLetter() {
             if (wordHolder[j].toUpperCase() === letterValue) {
                 $("#wordLocation div").eq(j).css({ 'color': 'red' });
                 letterCounter++;
-                console.log(letterCounter);
                 missCounter = 0;
             }
         }
@@ -93,6 +94,7 @@ function loseChecker() {
         alert("You Lose!!");
         cpuScore++;
         $('#compScore').html(cpuScore);
+        totalMisses = 0;
     }
 }
 
@@ -123,8 +125,6 @@ function resetCounters() {
     let letterCounter = 0;
     let missedLetterCounter = 0;
     let totalMisses = 0;
-    let playerScore = 0;
-    let cpuScore = 0;
     let alphabetSoup = 'A'.charCodeAt(0);
 }
 
