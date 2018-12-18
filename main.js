@@ -120,12 +120,13 @@ function picLoader() {
 }
 
 function resetCounters() {
-    let picCounter = 0;
-    let missCounter = 0;
-    let letterCounter = 0;
-    let missedLetterCounter = 0;
-    let totalMisses = 0;
-    let alphabetSoup = 'A'.charCodeAt(0);
+    picCounter = 0;
+    missCounter = 0;
+    letterCounter = 0;
+    missedLetterCounter = 0;
+    totalMisses = 0;
+    totalMisses = 0;
+    alphabetSoup = 'A'.charCodeAt(0);
 }
 
 function wordBoxReset() {
@@ -133,5 +134,5 @@ function wordBoxReset() {
 }
 
 function letterBoxReset() {
-    $('#letConBox').empty();
+    $('#letterBox').load('index2.html #letterBox')
 }
