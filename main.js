@@ -94,8 +94,8 @@ function loseChecker() {
 
 function missFinder() {
     if (missCounter === wordHolder.length) {
-        totalMisses++;
         swal("Wrong!");
+        totalMisses++;
         picLoader();
         missCounter = 0;
     }
