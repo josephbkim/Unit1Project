@@ -1,5 +1,5 @@
 const picArray = ["https://i.imgur.com/eVTqHsH.png", "https://i.imgur.com/PkMwrPa.png", "https://i.imgur.com/ZtKq1bU.png", "https://i.imgur.com/7gRbpfS.png", "https://i.imgur.com/pO8qUUD.png", "https://i.imgur.com/3gp0WIi.png"];
-const food = ['pizza', 'tacos', 'hamburger'];
+const webDevTerms = ['jquery', 'html', 'css'];
 const games = ['monopoly', 'chess', 'pong'];
 const animals = ['dog', 'cat', 'lion'];
 
@@ -21,7 +21,7 @@ $('#playerButton').on('click', function (event) {
 
 $('#topicButton').on('click', function () {
     if ($('#topicInput').val() == 1) {
-        wordHolder = (food[Math.floor(Math.random() * food.length)]);
+        wordHolder = (webDevTerms[Math.floor(Math.random() * webDevTerms.length)]);
         wordRandomizer();
         alphaSoup();
     } else if ($('#topicInput').val() == 2) {
@@ -136,3 +136,4 @@ function letterBoxReset() {
 // function pageReset() {
 //     $('body').load('index2.html #letterBox')
 // }
+

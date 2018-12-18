@@ -20,6 +20,10 @@ https://sweetalert2.github.io/#download
 //https://stackoverflow.com/questions/23409252/loop-from-a-to-z-in-jquery
 // 
 
+https://www.w3schools.com/js/js_random.asp
+
+https://stackoverflow.com/questions/33801650/how-do-i-refresh-a-div-content
+
 https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
 
 https://jquery.com/download/

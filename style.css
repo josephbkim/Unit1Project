@@ -175,6 +175,7 @@ h1 {
 }
 li {
     margin: 10px 0;
+    font-size: 14px;
 }
 
 #chosenWord {
@@ -198,11 +199,6 @@ li {
 .invisibleWord {
     border-bottom: 2px solid black;
 }
-
-
-
-
-
 
 #nextGame {
     position: relative;
