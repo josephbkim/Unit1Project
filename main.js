@@ -20,24 +20,20 @@ $('#playerButton').on('click', function (event) {
 });
 
 $('#topicButton').on('click', function () {
-
-
     if ($('#topicInput').val() == 1) {
         wordHolder = (food[Math.floor(Math.random() * food.length)]);
         wordRandomizer();
         alphaSoup();
-        clickLetter();
     } else if ($('#topicInput').val() == 2) {
         wordHolder = (games[Math.floor(Math.random() * games.length)]);
         wordRandomizer();
         alphaSoup();
-        clickLetter();
     } else if ($('#topicInput').val() == 3) {
         wordHolder = (animals[Math.floor(Math.random() * animals.length)]);
         wordRandomizer();
         alphaSoup();
-        clickLetter();
     }
+    clickLetter();
 });
 
 function wordRandomizer() {
@@ -64,8 +60,6 @@ function clickLetter() {
         for (let k = 0; k < wordHolder.length; k++) {
             if (wordHolder[k].toUpperCase() !== letterValue) {
                 missCounter++;
-                console.log('misses' + missCounter);
-
             }
             missFinder();
         }
@@ -109,10 +103,10 @@ function missFinder() {
 
 $('#replayButton').on('click', function () {
     resetCounters();
-    // wordBoxReset();
+    wordBoxReset();
     $('#hangImg').attr('src', "https://i.imgur.com/pCD9I6s.png");
-    // letterBoxReset();
-    pageReset()
+    letterBoxReset();
+    // playerInfoReset();
 })
 
 function picLoader() {
@@ -126,20 +120,19 @@ function resetCounters() {
     letterCounter = 0;
     missedLetterCounter = 0;
     totalMisses = 0;
-    totalMisses = 0;
     alphabetSoup = 'A'.charCodeAt(0);
 }
 
-// function wordBoxReset() {
-//     $('#wordLocation').load('index2.html #wordLocation')
-// }
-// function letterBoxReset() {
-//     $('#letterBox').load('index2.html #letterBox')
-// }
+function wordBoxReset() {
+    $('#wordLocation').load('index2.html #wordLocation')
+}
+function letterBoxReset() {
+    $('#letterBox').load('index2.html #letterBox')
+}
 // function playerInfoReset() {
-//     $('#playerInfo').load('index2.html #letterBox')
+//     $('#playerInfo').load('index2.html #playerInfo')
 // }
 
-function pageReset() {
-    $('body').load('index2.html #letterBox')
-}
+// function pageReset() {
+//     $('body').load('index2.html #letterBox')
+// }
