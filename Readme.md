@@ -30,9 +30,9 @@ https://jquery.com/download/
 
 
 PreWork
-![Wireframe1](Project 1 Wireframe.jpeg)
-![Wireframe Inital](IMG_8427.HEIC)
-![FlowChart](Project One FlowChart.pdf)
+![Wireframe1](Prework/Project 1 Wireframe.jpeg)
+![Wireframe Inital](Prework/IMG_8427.HEIC)
+![FlowChart](Prework/Project One FlowChart.pdf)
 
 
 
