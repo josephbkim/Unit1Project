@@ -66,6 +66,7 @@ function clickLetter() {
         for (let j = 0; j < wordHolder.length; j++) {
             if (wordHolder[j].toUpperCase() === letterValue) {
                 $("#wordLocation div").eq(j).css({ 'color': 'red' });
+                swal('Correct!! Go Again!!')
                 letterCounter++;
                 missCounter = 0;
             }
@@ -94,7 +95,7 @@ function loseChecker() {
 
 function missFinder() {
     if (missCounter === wordHolder.length) {
-        swal("Wrong!");
+        swal("Wrong! Try Again!");
         totalMisses++;
         picLoader();
         missCounter = 0;
