@@ -83,7 +83,7 @@ function clickLetter() {
 
 function winChecker() {
     if (letterCounter === wordHolder.length) {
-        alert('You win!!');
+        swal('You win!!');
         playerScore++;
         $('#playerScore').html(playerScore);
     }
@@ -91,7 +91,7 @@ function winChecker() {
 
 function loseChecker() {
     if (totalMisses === 6) {
-        alert("You Lose!!");
+        swal("You Lose!!");
         cpuScore++;
         $('#compScore').html(cpuScore);
         totalMisses = 0;
@@ -101,7 +101,7 @@ function loseChecker() {
 function missFinder() {
     if (missCounter === wordHolder.length) {
         totalMisses++;
-        alert("wrong!");
+        swal("wrong!");
         picLoader();
         missCounter = 0;
     }

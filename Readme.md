@@ -19,9 +19,20 @@ https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-
 https://jquery.com/download/
 
 
-Wireframes
+PreWork
+![Wireframe1](Project 1 Wireframe.jpeg)
+![Wireframe Inital](IMG_8427.HEIC)
+![FlowChart](Project One FlowChart.pdf)
 
+Trello
+https://trello.com/b/Gc4oahfL/project-1
+
+GitHub Url
+https://github.com/josephbkim/Unit1Project
 
 
 
 Features in Progress
+Nav Contents
+Reset Button
+Manual Word Input
